@@ -41,20 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
         blockThird: "Проєкти спільноти зосереджені на масштабуванні рекламних вертикалей та побудові ефективного системного підходу.",
         blockFourth: 'У межах ком’юніті впроваджуються моделі процесів, що сприяють зростанню прибутковості проєктів. Особлива увага приділяється розвитку BI-систем, які забезпечують масштабування та стабільне управління на кожному етапі зростання.'
       },
-      tarifs: {
-        title: 'Тарифи',
-        tarifTitle: ['Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей', 'Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей'],
-        tarifDescr: ["Систематизація процесів", "Автоматизація процесів", "Масштабування процесів", "Систематизація процесів", "Автоматизація процесів", "Масштабування процесів"],
-        tarifList: [ 
-        ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
-        ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
-        ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."],
-        ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
-        ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
-        ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."]],
-        price: ["Членський внесок: $10", "Членський внесок: $25", "Членський внесок: $50"],
-        btn: ["Підписатися", "Підписатися", "Підписатися"]
-      },
+      // tarifs: {
+      //   title: 'Тарифи',
+      //   tarifTitle: ['Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей', 'Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей'],
+      //   tarifDescr: ["Систематизація процесів", "Автоматизація процесів", "Масштабування процесів", "Систематизація процесів", "Автоматизація процесів", "Масштабування процесів"],
+      //   tarifList: [ 
+      //   ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
+      //   ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
+      //   ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."],
+      //   ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
+      //   ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
+      //   ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."]],
+      //   price: ["Членський внесок: $10", "Членський внесок: $25", "Членський внесок: $50"],
+      //   btn: ["Підписатися", "Підписатися", "Підписатися"]
+      // },
       partners: {
         title: "Партнери",
         subtitle: 'спільноти'
@@ -118,20 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
         blockThird: "Community projects are focused on scaling advertising verticals and building an effective systematic approach.",
         blockFourth: 'The community is implementing process models that contribute to the growth of project profitability. Particular attention is paid to the development of BI systems that ensure scalability and stable management at every stage of growth.'
     },
-    tarifs: {
-        title: 'Tariffs',
-        tarifTitle: ['Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models', 'Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models'],
-        tarifDescr: ["Systematization of processes", "Automation of processes", "Scaling of processes", "Systematization of processes", "Automation of processes", "Scaling of processes"],
-        tarifList: [ 
-        ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
-        ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
-        ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."],
-        ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
-        ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
-        ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."]],
-        price: ["Membership fee: $10", "Membership fee: $25", "Membership fee: $50"],
-        btn: ["Subscribe", "Subscribe", "Subscribe"]
-    },
+    // tarifs: {
+    //     title: 'Tariffs',
+    //     tarifTitle: ['Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models', 'Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models'],
+    //     tarifDescr: ["Systematization of processes", "Automation of processes", "Scaling of processes", "Systematization of processes", "Automation of processes", "Scaling of processes"],
+    //     tarifList: [ 
+    //     ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
+    //     ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
+    //     ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."],
+    //     ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
+    //     ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
+    //     ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."]],
+    //     price: ["Membership fee: $10", "Membership fee: $25", "Membership fee: $50"],
+    //     btn: ["Subscribe", "Subscribe", "Subscribe"]
+    // },
     partners: {
         title: "Community",
         subtitle: 'partners'
@@ -199,14 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const formatBlockThird = document.getElementById('formatBlockThird');
       const formatBlockFourth = document.getElementById('formatBlockFourth');
       //tarifs
-      const tarifTitle = document.getElementById('packages-Title');
-      const tarifItemTitle = document.querySelectorAll('.packages-item__title');
-      const tarifDescr = document.querySelectorAll('.packages-item__descr');
-      const tarifLists = document.querySelectorAll('.packages-item__list');
-      const tarifSub = document.querySelectorAll('.packages__new-price');
-      const tarifBtn = document.querySelectorAll('.packages__new-btn');
-      const tarifLargeSub = document.querySelectorAll('.packages-item__price');
-      const tarifLargeBtn = document.querySelectorAll('.packages-item__btn-span');
+      // const tarifTitle = document.getElementById('packages-Title');
+      // const tarifItemTitle = document.querySelectorAll('.packages-item__title');
+      // const tarifDescr = document.querySelectorAll('.packages-item__descr');
+      // const tarifLists = document.querySelectorAll('.packages-item__list');
+      // const tarifSub = document.querySelectorAll('.packages__new-price');
+      // const tarifBtn = document.querySelectorAll('.packages__new-btn');
+      // const tarifLargeSub = document.querySelectorAll('.packages-item__price');
+      // const tarifLargeBtn = document.querySelectorAll('.packages-item__btn-span');
 
 
       //partners
@@ -329,41 +329,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
       //tarifs
-      tarifTitle.textContent = langObj.tarifs.title;
-      tarifItemTitle.forEach((title, index) => {
-        title.textContent = langObj.tarifs.tarifTitle[index];
-      })
-      tarifDescr.forEach((descr, index) => {
-        descr.textContent = langObj.tarifs.tarifDescr[index];
-      })
+      // tarifTitle.textContent = langObj.tarifs.title;
+      // tarifItemTitle.forEach((title, index) => {
+      //   title.textContent = langObj.tarifs.tarifTitle[index];
+      // })
+      // tarifDescr.forEach((descr, index) => {
+      //   descr.textContent = langObj.tarifs.tarifDescr[index];
+      // })
 
-      tarifLists.forEach((ul, index) => {
+      // tarifLists.forEach((ul, index) => {
 
-        ul.innerHTML = '';
+      //   ul.innerHTML = '';
 
-        const items = langObj.tarifs.tarifList[index];
-
-
-        items.forEach(itemText => {
-            const li = document.createElement('li');
-            li.textContent = itemText;
-            ul.appendChild(li);
-        });
-      });
-      tarifSub.forEach((price, index) => {
-        price.textContent = langObj.tarifs.price[index];
-      })
-      tarifBtn.forEach((btn, index) => {
-        btn.textContent = langObj.tarifs.btn[index];
-      })
+      //   const items = langObj.tarifs.tarifList[index];
 
 
-      tarifLargeSub.forEach((price, index) => {
-        price.textContent = langObj.tarifs.price[index];
-      })
-      tarifLargeBtn.forEach((btn, index) => {
-        btn.textContent = langObj.tarifs.btn[index];
-      })
+      //   items.forEach(itemText => {
+      //       const li = document.createElement('li');
+      //       li.textContent = itemText;
+      //       ul.appendChild(li);
+      //   });
+      // });
+      // tarifSub.forEach((price, index) => {
+      //   price.textContent = langObj.tarifs.price[index];
+      // })
+      // tarifBtn.forEach((btn, index) => {
+      //   btn.textContent = langObj.tarifs.btn[index];
+      // })
+
+
+      // tarifLargeSub.forEach((price, index) => {
+      //   price.textContent = langObj.tarifs.price[index];
+      // })
+      // tarifLargeBtn.forEach((btn, index) => {
+      //   btn.textContent = langObj.tarifs.btn[index];
+      // })
 
 
 
@@ -513,20 +513,20 @@ document.addEventListener('DOMContentLoaded', () => {
         blockThird: "Проєкти спільноти зосереджені на масштабуванні рекламних вертикалей та побудові ефективного системного підходу.",
         blockFourth: 'У межах ком’юніті впроваджуються моделі процесів, що сприяють зростанню прибутковості проєктів. Особлива увага приділяється розвитку BI-систем, які забезпечують масштабування та стабільне управління на кожному етапі зростання.'
       },
-      tarifs: {
-        title: 'Тарифи',
-        tarifTitle: ['Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей', 'Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей'],
-        tarifDescr: ["Систематизація процесів", "Автоматизація процесів", "Масштабування процесів", "Систематизація процесів", "Автоматизація процесів", "Масштабування процесів"],
-        tarifList: [ 
-        ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
-        ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
-        ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."],
-        ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
-        ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
-        ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."]],
-        price: ["Членський внесок: $10", "Членський внесок: $25", "Членський внесок: $50"],
-        btn: ["Підписатися", "Підписатися", "Підписатися"]
-      },
+      // tarifs: {
+      //   title: 'Тарифи',
+      //   tarifTitle: ['Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей', 'Digitalization проектів', 'Digitalization процесів', 'Digitalization BI-моделей'],
+      //   tarifDescr: ["Систематизація процесів", "Автоматизація процесів", "Масштабування процесів", "Систематизація процесів", "Автоматизація процесів", "Масштабування процесів"],
+      //   tarifList: [ 
+      //   ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
+      //   ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
+      //   ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."],
+      //   ["Розбір кейсів і рекламних кампаній від медіабаєрів.", "Інструменти та шаблони для запуску і оптимізації зв’язок.", "Доступ до бібліотеки із навчальними курсами.", "Доступ до бібліотеки з гайдами по офферам і аналітиці.", "Майстер-класи та воркшопи для покращення результатів.", "Участь у командних маркетингових проєктах.", "Зворотний зв’язок від наставників.", "Чат ком’юніті для обміну досвідом."], 
+      //   ["Все, що входить у пакет Silver.", "Ексклюзивний доступ до кейсів з масштабування.", "Доступ до систем автоматизації трафіку.", "Розширені аналітичні інструменти і звіти.", "Участь у стратегічних сесіях і воркшопах.", "Пріоритетна підтримка.", "Доступ до закритих партнерських проєктів."], 
+      //   ["Усі переваги пакетів Silver і Gold.", "Доступ до інструментів автоматизації і ВI-аналітики.", "Ексклюзивні кейси зі складних вертикалей і гео.", "Доступ до перевірених BPMN-моделей.", "Запрошення на закриті зустрічі, воркшопи та стратсесії.", "Повний доступ до всіх внутрішніх ресурсів і тренінгів.", "Пріоритет у запуску нових проєктів і партнерств."]],
+      //   price: ["Членський внесок: $10", "Членський внесок: $25", "Членський внесок: $50"],
+      //   btn: ["Підписатися", "Підписатися", "Підписатися"]
+      // },
       partners: {
         title: "Партнери",
         subtitle: 'спільноти'
@@ -589,20 +589,20 @@ document.addEventListener('DOMContentLoaded', () => {
         blockThird: "Community projects are focused on scaling advertising verticals and building an effective systematic approach.",
         blockFourth: 'The community is implementing process models that contribute to the growth of project profitability. Particular attention is paid to the development of BI systems that ensure scalability and stable management at every stage of growth.'
     },
-    tarifs: {
-        title: 'Tariffs',
-        tarifTitle: ['Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models', 'Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models'],
-        tarifDescr: ["Systematization of processes", "Automation of processes", "Scaling of processes", "Systematization of processes", "Automation of processes", "Scaling of processes"],
-        tarifList: [ 
-        ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
-        ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
-        ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."],
-        ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
-        ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
-        ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."]],
-        price: ["Membership fee: $10", "Membership fee: $25", "Membership fee: $50"],
-        btn: ["Subscribe", "Subscribe", "Subscribe"]
-    },
+    // tarifs: {
+    //     title: 'Tariffs',
+    //     tarifTitle: ['Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models', 'Digitalization of projects', 'Digitalization of processes', 'Digitalization of BI models'],
+    //     tarifDescr: ["Systematization of processes", "Automation of processes", "Scaling of processes", "Systematization of processes", "Automation of processes", "Scaling of processes"],
+    //     tarifList: [ 
+    //     ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
+    //     ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
+    //     ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."],
+    //     ["Analysis of cases and advertising campaigns from media buyers.", "Tools and templates for launching and optimizing communications.", "Access to the library with training courses.", "Access to the library with guides on offers and analytics.", "Master classes and workshops to improve results.", "Participation in team marketing projects.", "Feedback from mentors.", "Community chat to share experiences."], 
+    //     ["Everything included in the Silver package.", "Exclusive access to scaling cases.", "Access to traffic automation systems.", "Advanced analytical tools and reports.", "Participation in strategic sessions and workshops.", "Priority support.", "Access to closed partnership projects."], 
+    //     ["All the benefits of Silver and Gold packages.", "Access to automation and BI analytics tools.", "Exclusive cases from complex verticals and geos.", "Access to proven BPMN models.", "Invitations to private meetings, workshops, and strat sessions.", "Full access to all internal resources and trainings.", "Priority in launching new projects and partnerships."]],
+    //     price: ["Membership fee: $10", "Membership fee: $25", "Membership fee: $50"],
+    //     btn: ["Subscribe", "Subscribe", "Subscribe"]
+    // },
     partners: {
         title: "Community",
         subtitle: 'partners'
@@ -669,14 +669,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const formatBlockThird = document.getElementById('formatBlockThird');
       const formatBlockFourth = document.getElementById('formatBlockFourth');
       //tarifs
-      const tarifTitle = document.getElementById('packages-Title');
-      const tarifItemTitle = document.querySelectorAll('.packages-item__title');
-      const tarifDescr = document.querySelectorAll('.packages-item__descr');
-      const tarifLists = document.querySelectorAll('.packages-item__list');
-      const tarifSub = document.querySelectorAll('.packages__new-price');
-      const tarifBtn = document.querySelectorAll('.packages__new-btn');
-      const tarifLargeSub = document.querySelectorAll('.packages-item__price');
-      const tarifLargeBtn = document.querySelectorAll('.packages-item__btn-span');
+      // const tarifTitle = document.getElementById('packages-Title');
+      // const tarifItemTitle = document.querySelectorAll('.packages-item__title');
+      // const tarifDescr = document.querySelectorAll('.packages-item__descr');
+      // const tarifLists = document.querySelectorAll('.packages-item__list');
+      // const tarifSub = document.querySelectorAll('.packages__new-price');
+      // const tarifBtn = document.querySelectorAll('.packages__new-btn');
+      // const tarifLargeSub = document.querySelectorAll('.packages-item__price');
+      // const tarifLargeBtn = document.querySelectorAll('.packages-item__btn-span');
 
 
       //partners
@@ -799,41 +799,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
       //tarifs
-      tarifTitle.textContent = langObj.tarifs.title;
-      tarifItemTitle.forEach((title, index) => {
-        title.textContent = langObj.tarifs.tarifTitle[index];
-      })
-      tarifDescr.forEach((descr, index) => {
-        descr.textContent = langObj.tarifs.tarifDescr[index];
-      })
+      // tarifTitle.textContent = langObj.tarifs.title;
+      // tarifItemTitle.forEach((title, index) => {
+      //   title.textContent = langObj.tarifs.tarifTitle[index];
+      // })
+      // tarifDescr.forEach((descr, index) => {
+      //   descr.textContent = langObj.tarifs.tarifDescr[index];
+      // })
 
-      tarifLists.forEach((ul, index) => {
+      // tarifLists.forEach((ul, index) => {
 
-        ul.innerHTML = '';
+      //   ul.innerHTML = '';
 
-        const items = langObj.tarifs.tarifList[index];
-
-
-        items.forEach(itemText => {
-            const li = document.createElement('li');
-            li.textContent = itemText;
-            ul.appendChild(li);
-        });
-      });
-      tarifSub.forEach((price, index) => {
-        price.textContent = langObj.tarifs.price[index];
-      })
-      tarifBtn.forEach((btn, index) => {
-        btn.textContent = langObj.tarifs.btn[index];
-      })
+      //   const items = langObj.tarifs.tarifList[index];
 
 
-      tarifLargeSub.forEach((price, index) => {
-        price.textContent = langObj.tarifs.price[index];
-      })
-      tarifLargeBtn.forEach((btn, index) => {
-        btn.textContent = langObj.tarifs.btn[index];
-      })
+      //   items.forEach(itemText => {
+      //       const li = document.createElement('li');
+      //       li.textContent = itemText;
+      //       ul.appendChild(li);
+      //   });
+      // });
+      // tarifSub.forEach((price, index) => {
+      //   price.textContent = langObj.tarifs.price[index];
+      // })
+      // tarifBtn.forEach((btn, index) => {
+      //   btn.textContent = langObj.tarifs.btn[index];
+      // })
+
+
+      // tarifLargeSub.forEach((price, index) => {
+      //   price.textContent = langObj.tarifs.price[index];
+      // })
+      // tarifLargeBtn.forEach((btn, index) => {
+      //   btn.textContent = langObj.tarifs.btn[index];
+      // })
 
 
 
