@@ -775,195 +775,629 @@
 
 window.addEventListener('load', () => {
 
-  // -----------------------------
-  // 1. Язык и hero/format/partners
-  // -----------------------------
-  if (localStorage.getItem('languageChanged') !== 'true') {
-    const storedLang = localStorage.getItem('language') || 'EN';
+    if (localStorage.getItem('languageChanged') === 'true') return;
 
-    // Пример для hero
-    const mainDesc = document.querySelector('[data-elem-id="1642632663322"]');
-    if (mainDesc) mainDesc.setAttribute('data-field-width-res-320-value', '261');
+    if (localStorage.getItem('language') === 'EN') {
 
-    // Пример formatHeight
-    const formatHeight = document.querySelector('[data-elem-id="1642672804336"]');
-    if (formatHeight) {
-      formatHeight.setAttribute('data-field-height-value', '890');
-      formatHeight.setAttribute('data-field-height-res-960-value', '810');
-      formatHeight.setAttribute('data-field-height-res-640-value', '1050');
-      formatHeight.setAttribute('data-field-height-res-480-value', '920');
-      formatHeight.setAttribute('data-field-height-res-320-value', '962');
+        //hero
+        const mainDesc = document.querySelector('[data-elem-id="1642632663322"]');
+        mainDesc.setAttribute('data-field-width-res-320-value', "261");
+
+        //format
+        const formatFirstTitle = document.querySelector('[data-elem-id="1642673246799"]');
+        const formatSecondTitle = document.querySelector('[data-elem-id="1642673408002"]');
+        const formatCorner = document.querySelector('[data-elem-id="1642673553626"]');
+        const formatBlock = document.querySelector('[data-elem-id="1642678089715"]');
+        const formatBlockSecond = document.querySelector('[data-elem-id="1642678131015"]');
+        const formatBlockThird = document.querySelector('[data-elem-id="1642680360651"]');
+        const formatBlockFourth = document.querySelector('[data-elem-id="1642680374604"]');
+        const formatHeight = document.querySelector('[data-elem-id="1642672804336"]');
+        const formatCircle = document.querySelector('[data-elem-id="1643121921891"]')
+        const formatHalfs = document.querySelector('[data-elem-id="1643121921896"]')
+
+        formatHeight.setAttribute('data-field-height-value', '890');
+        formatHeight.setAttribute('data-field-height-res-960-value', '810')
+        formatHeight.setAttribute('data-field-height-res-640-value', '1050')
+        formatHeight.setAttribute('data-field-height-res-480-value', '920')
+        formatHeight.setAttribute('data-field-height-res-320-value', '962')
+
+        formatCorner.setAttribute('data-field-top-value', '90');
+        formatCorner.setAttribute('data-field-width-res-320-value', '110');
+
+        formatFirstTitle.setAttribute('data-field-left-value', '200');
+
+        formatSecondTitle.setAttribute('data-field-left-value', '570');
+
+        formatBlock.setAttribute('data-field-top-value', '280');
+
+        formatBlockSecond.setAttribute('data-field-top-value', '450');
+        formatBlockSecond.setAttribute('data-field-top-res-960-value', '390');
+        formatBlockSecond.setAttribute('data-field-top-res-320-value', '440');
+
+        formatBlockThird.setAttribute('data-field-top-value', '624');
+        formatBlockThird.setAttribute('data-field-top-res-960-value', '490');
+        formatBlockThird.setAttribute('data-field-top-res-640-value', '580');
+        formatBlockThird.setAttribute('data-field-top-res-480-value', '495');
+        formatBlockThird.setAttribute('data-field-top-res-320-value', '505');
+
+        formatBlockFourth.setAttribute('data-field-top-value', '725');
+        formatBlockFourth.setAttribute('data-field-top-res-960-value', '620');
+        formatBlockFourth.setAttribute('data-field-top-res-640-value', '720');
+        formatBlockFourth.setAttribute('data-field-top-res-480-value', '630');
+        formatBlockFourth.setAttribute('data-field-top-res-320-value', '650');
+
+        formatCircle.setAttribute('data-field-top-res-960-value', '530');
+
+        formatHalfs.setAttribute('data-field-top-res-640-value', '895');
+        formatHalfs.setAttribute('data-field-top-res-480-value', '795');
+        formatHalfs.setAttribute('data-field-top-res-320-value', '855');
+
+        //partners
+        const visionLink = document.querySelector('[data-elem-id="1643490172730"]');
+        const ncr = document.querySelector('[data-elem-id="1643490172746"]');
+        const mainEvent = document.querySelector('[data-elem-id="1643490172755"]');
+        const schlumberger = document.querySelector('[data-elem-id="1643490172725"]');
+        const k2integrity = document.querySelector('[data-elem-id="1643490172750"]');
+        const capitalist = document.querySelector('[data-elem-id="1643490172741"]');
+        const myLead = document.querySelector('[data-elem-id="1643490172735"]');
+
+        const partnersArrows = document.querySelector('[data-elem-id="1643490172712"]');
+
+        visionLink.setAttribute('data-field-top-value', "70");
+        visionLink.setAttribute('data-field-top-res-960-value', "16");
+
+        ncr.setAttribute('data-field-top-value', "70");
+        ncr.setAttribute('data-field-top-res-960-value', "16");
+        mainEvent.setAttribute('data-field-top-value', "70");
+        mainEvent.setAttribute('data-field-top-res-960-value', "16");
+
+        schlumberger.setAttribute('data-field-top-value', "70");
+        schlumberger.setAttribute('data-field-top-res-960-value', "16");
+
+        k2integrity.setAttribute('data-field-top-value', "187");
+        k2integrity.setAttribute('data-field-top-res-960-value', "122");
+
+        capitalist.setAttribute('data-field-top-value', "187");
+        capitalist.setAttribute('data-field-top-res-960-value', "122");
+
+        myLead.setAttribute('data-field-top-value', "187");
+        myLead.setAttribute('data-field-top-res-960-value', "122");
+
+        partnersArrows.setAttribute('data-field-top-res-960-value', "-20");
+        partnersArrows.setAttribute('data-field-left-res-960-value', "165");
+        partnersArrows.setAttribute('data-field-top-res-320-value', "7");
+
+        function updateStyles() {
+            const secondTitle = document.querySelector('.contacts__title-second');
+            const thirdTitle = document.querySelector('.contacts__title-third');
+            const fourthTitle = document.querySelector('.contacts__title-fourth');
+
+            if (!secondTitle || !thirdTitle || !fourthTitle) return;
+
+            const width = window.innerWidth;
+
+            if (width >= 1200) {
+                secondTitle.style.position = 'absolute';
+                secondTitle.style.top = '84px';
+                secondTitle.style.left = '100px';
+
+                thirdTitle.style.position = 'absolute';
+                thirdTitle.style.top = '165px';
+                thirdTitle.style.left = '125px';
+            }
+
+            if (width <= 959) {
+                thirdTitle.style.position = 'absolute';
+                thirdTitle.style.top = '95px';
+                thirdTitle.style.left = '0px';
+            }
+
+            if (width <= 639) {
+                secondTitle.style.position = 'absolute';
+                secondTitle.style.top = '50px';
+                secondTitle.style.left = '197px';
+
+                thirdTitle.style.position = 'absolute';
+                thirdTitle.style.top = '85px';
+                thirdTitle.style.left = '0px';
+
+                fourthTitle.style.position = 'absolute';
+                fourthTitle.style.top = '85px';
+                fourthTitle.style.left = '65px';
+            }
+
+            if (width <= 479) {
+                secondTitle.style.position = 'absolute';
+                secondTitle.style.top = '75px';
+                secondTitle.style.left = '0px';
+
+                thirdTitle.style.position = 'absolute';
+                thirdTitle.style.top = '75px';
+                thirdTitle.style.left = '140px';
+
+                fourthTitle.style.position = 'absolute';
+                fourthTitle.style.top = '105px';
+                fourthTitle.style.left = '0px';
+            }
+        }
+
+        window.addEventListener('resize', updateStyles);
+        updateStyles();
+
+        if (window.innerWidth > 1200) {
+            const element = document.querySelector('.services__title-text');
+            if (element) {
+                element.style.width = '175px';
+            }
+        }
+        if (window.innerWidth > 959) {
+            const element = document.querySelector('.services__title-text');
+            if (element) {
+                element.style.width = '175px';
+            }
+        }
+        if (window.innerWidth > 767) {
+            const element = document.querySelector('.services__title-text');
+            if (element) {
+                element.style.width = '185px';
+            }
+        }
+        if (window.innerWidth > 639) {
+            const element = document.querySelector('.services__title-text');
+            if (element) {
+                element.style.width = '185px';
+            }
+        }
     }
 
-    // Пример partners
-    const visionLink = document.querySelector('[data-elem-id="1643490172730"]');
-    if (visionLink) {
-      visionLink.setAttribute('data-field-top-value', '70');
-      visionLink.setAttribute('data-field-top-res-960-value', '16');
+    const close = document.querySelector('.header__close');
+    const closeScene = document.querySelector('.header__scene');
+    const hamburgerMenu = document.querySelector('.header__mobile-menu');
+    const openMenu = document.querySelector('.header__hamburger');
+    const bodyScroll = document.getElementById('bodyScroll');
+    const headerAdmin = document.querySelector('.header__admin');
+    const menuLink = document.querySelectorAll('.header__link-mobile');
+
+    if (localStorage.getItem('languageChanged') === 'true') {
+        localStorage.removeItem('languageChanged');
+        return;
     }
 
-    // Можно аналогично остальные элементы — только с проверкой на null
-  }
+    const radios = document.querySelectorAll('input[name="language"]');
+    const labels = document.querySelectorAll('.header__lang-switch label');
+    const bg = document.querySelector('.lang-bg');
+    const bgMobile = document.querySelector('.lang-bg-mobile');
+    const buttons = document.querySelectorAll('.careers__btn');
 
-  // -----------------------------
-  // 2. Header и мобильное меню
-  // -----------------------------
-  const bodyScroll = document.getElementById('bodyScroll');
-  const hamburgerMenu = document.querySelector('.header__mobile-menu');
-  const openMenu = document.querySelector('.header__hamburger');
-  const close = document.querySelector('.header__close');
-  const closeScene = document.querySelector('.header__scene');
-  const menuLinks = document.querySelectorAll('.header__link-mobile');
+    let storedLang = localStorage.getItem('language') || 'EN';
 
-  function closeMenu() {
-    if (hamburgerMenu) hamburgerMenu.classList.remove('active');
-    if (closeScene) closeScene.classList.remove('active');
-    if (bodyScroll) bodyScroll.classList.remove('scroll-no');
-  }
-
-  if (openMenu) openMenu.addEventListener('click', () => {
-    if (bodyScroll) bodyScroll.classList.add('scroll-no');
-    if (hamburgerMenu) hamburgerMenu.classList.add('active');
-    if (closeScene) closeScene.classList.add('active');
-  });
-
-  if (close) close.addEventListener('click', closeMenu);
-  if (closeScene) closeScene.addEventListener('click', closeMenu);
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.dataset.target;
-      const target = targetId ? document.getElementById(targetId) : null;
-      if (target) {
-        closeMenu();
-        setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 10);
-      }
-    });
-  });
-
-  // -----------------------------
-  // 3. Радио языки
-  // -----------------------------
-  const radios = document.querySelectorAll('input[name="language"]');
-  const labels = document.querySelectorAll('.header__lang-switch label');
-  const bg = document.querySelector('.lang-bg');
-  const bgMobile = document.querySelector('.lang-bg-mobile');
-  let language = localStorage.getItem('language') || 'EN';
-
-  function updateBackgrounds(lang) {
-    if (bg) bg.style.transform = lang === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
-    if (bgMobile) bgMobile.style.transform = lang === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
-  }
-
-  function updateLabelColors() {
-    labels.forEach(label => {
-      const radio = document.getElementById(label.getAttribute('for'));
-      if (radio) label.style.color = radio.checked ? 'white' : '';
-    });
-  }
-
-  radios.forEach(r => r.checked = r.value === language);
-  updateBackgrounds(language);
-  updateLabelColors();
-
-  radios.forEach(r => r.addEventListener('change', () => {
-    if (r.checked) {
-      language = r.value;
-      localStorage.setItem('language', language);
-      updateBackgrounds(language);
-      updateLabelColors();
-      document.dispatchEvent(new CustomEvent('languageChanged', { detail: language.toLowerCase() }));
-      location.reload();
+    function updateBackgrounds(language) {
+        if (bg) bg.style.transform = language === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
+        if (bgMobile) bgMobile.style.transform = language === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
     }
-  }));
 
-  // -----------------------------
-  // 4. Careers buttons
-  // -----------------------------
-  const buttons = document.querySelectorAll('.careers__btn');
-  const texts = document.querySelectorAll('.careers__text');
-  const priorityImg = document.querySelectorAll('.careers__img');
+    function updateLabelsColor() {
+        labels.forEach(label => {
+            const forId = label.getAttribute('for');
+            const radio = document.getElementById(forId);
+            label.style.color = radio.checked ? 'white' : '';
+        });
+    }
 
-  buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      texts.forEach(text => text.classList.remove('active'));
-      priorityImg.forEach(img => img.classList.remove('active'));
-
-      if (texts[index]) texts[index].classList.add('active');
-      if (priorityImg[index]) priorityImg[index].classList.add('active');
+    radios.forEach(r => {
+        r.checked = r.value === storedLang;
     });
-  });
+    updateBackgrounds(storedLang);
+    updateLabelsColor();
 
-  // -----------------------------
-  // 5. Animate on scroll
-  // -----------------------------
-  const animatedFlags = new WeakMap();
-  const scrollObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting && !animatedFlags.get(el)) {
-        const delay = parseInt(el.dataset.delay) || 0;
-        setTimeout(() => {
-          el.classList.add('show');
-          animatedFlags.set(el, true);
-        }, delay);
-      }
+    radios.forEach(r => {
+        r.addEventListener('change', () => {
+            if (r.checked) {
+                const language = r.value;
+                storedLang = language;
+                localStorage.setItem('language', language);
+                updateBackgrounds(language);
+                updateLabelsColor();
+                document.dispatchEvent(new CustomEvent('languageChanged', { detail: language.toLowerCase() }));
+                location.reload();
+            }
+        });
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.animate-slide-in, .animate-on-scroll').forEach(el => scrollObserver.observe(el));
+    // --- Карьерные кнопки ---
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const texts = document.querySelectorAll('.careers__text');
+            const priorityImg = document.querySelectorAll('.careers__img');
+            texts.forEach(text => text.classList.remove('active'));
+            priorityImg.forEach(img => img.classList.remove('active'));
+            if (texts[index]) texts[index].classList.add('active');
+            if (priorityImg[index]) priorityImg[index].classList.add('active');
+        });
+    });
 
-  // -----------------------------
-  // 6. Форма контактов
-  // -----------------------------
-  const form = document.querySelector('.contacts__form');
-  if (form) {
+    // --- Мобильное меню ---
+    if (openMenu && hamburgerMenu && closeScene && bodyScroll) {
+        openMenu.addEventListener('click', () => {
+            bodyScroll.classList.add('scroll-no');
+            hamburgerMenu.classList.add('active');
+            closeScene.classList.add('active');
+        });
+
+        function closeMenu() {
+            hamburgerMenu.classList.remove('active');
+            closeScene.classList.remove('active');
+            bodyScroll.classList.remove('scroll-no');
+        }
+
+        if (close) close.addEventListener('click', closeMenu);
+        if (closeScene) closeScene.addEventListener('click', closeMenu);
+    }
+
+    // --- Плавный скролл и закрытие меню ---
+    menuLink.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                if (typeof closeMenu === 'function') closeMenu();
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    history.replaceState(null, null, ' ');
+                }, 10);
+            }
+        });
+    });
+
+    document.body.style.display = '';
+
+    if (localStorage.getItem('languageChanged') === 'true') return;
+
+    /// 1. Disabled button
+    const btn = document.getElementById('btn');
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    history.replaceState(null, null, ' ');
+                }, 50);
+            }
+        });
+    }
+
+    /// 2. Fill block animation (наш SVG/Div градиент)
+    const fill = document.getElementById('fillDiv');
+    const block = document.getElementById('colorBlock');
+
+    function updateFillByScroll() {
+        if (!fill || !block) return;
+        const rect = block.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top > windowHeight) {
+            fill.style.height = '0';
+            return;
+        }
+
+        const visibleTop = Math.max(0, windowHeight - rect.top);
+        const totalHeight = rect.height + windowHeight;
+        const progress = Math.min(Math.max(visibleTop / totalHeight, 0), 1);
+        fill.style.height = `${progress * 100}%`;
+    }
+
+    updateFillByScroll();
+    window.addEventListener('scroll', updateFillByScroll);
+    window.addEventListener('resize', updateFillByScroll);
+
+    /// 3. Анимация изображения при скролле
+    const image = document.getElementById('animate-img');
+    if (image) {
+        window.addEventListener('scroll', () => {
+            const rect = image.getBoundingClientRect();
+            const distance = Math.max(0, window.innerHeight - rect.top);
+            const maxDistance = window.innerHeight;
+            const scaleFactor = Math.min(1 + (distance / maxDistance) * 0.2, 1.6);
+            image.style.transform = `scale(${scaleFactor})`;
+        });
+    }
+
+    /// 4. Animate-on-scroll универсальный
+    const animatedFlags = new WeakMap();
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const el = entry.target;
+            if (entry.isIntersecting && !animatedFlags.get(el)) {
+                const delay = parseInt(el.dataset.delay) || 0;
+                setTimeout(() => {
+                    el.classList.add('show');
+                    animatedFlags.set(el, true);
+                }, delay);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.animate-slide-in, .animate-on-scroll').forEach(el => {
+        scrollObserver.observe(el);
+    });
+
+    /// 5. Консалтинг табы и фильтр
+    const tabs = document.querySelectorAll('.consalting__tab');
+    const consaltingItems = document.querySelectorAll('.consalting__item');
+    const select = document.querySelector('.consalting__list-select');
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', (e) => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            consaltingItems.forEach(item => item.classList.remove('active'));
+            if (consaltingItems[index]) {
+                consaltingItems[index].classList.add('active');
+                const animatedItems = consaltingItems[index].querySelectorAll('.animate-on-scroll');
+                animatedItems.forEach(el => {
+                    if (!animatedFlags.has(el)) scrollObserver.observe(el);
+                });
+            }
+        });
+    });
+
+    if (select) {
+        select.addEventListener('change', () => {
+            const map = { 'all': 0, 'med': 1, 'hot': 2, 'build': 3 };
+            const index = map[select.value];
+            tabs.forEach(t => t.classList.remove('active'));
+            if (tabs[index]) tabs[index].classList.add('active');
+            consaltingItems.forEach(item => item.classList.remove('active'));
+            if (consaltingItems[index]) {
+                consaltingItems[index].classList.add('active');
+                const animatedItems = consaltingItems[index].querySelectorAll('.animate-on-scroll');
+                animatedItems.forEach(el => {
+                    if (!animatedFlags.has(el)) scrollObserver.observe(el);
+                });
+            }
+        });
+    }
+
+    const initialIndex = Array.from(tabs).findIndex(t => t.classList.contains('active'));
+    if (consaltingItems[initialIndex]) {
+        consaltingItems[initialIndex].classList.add('active');
+        const animatedItems = consaltingItems[initialIndex].querySelectorAll('.animate-on-scroll');
+        animatedItems.forEach(el => {
+            if (!animatedFlags.has(el)) scrollObserver.observe(el);
+        });
+    }
+
+    document.querySelectorAll('.header__link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.dataset.target;
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ============ ИСПРАВЛЕННЫЙ СЛАЙДЕР ============
+    if (localStorage.getItem('languageChanged') === 'true') return;
+
+    const wrapper = document.querySelector('.slider__viewport');
+    const prevBtn = document.querySelector('.packages-item__prev');
+    const nextBtn = document.querySelector('.packages-item__next');
+    const dotsContainer = document.querySelector('.dots');
+
+    if (wrapper && prevBtn && nextBtn && dotsContainer) {
+        const sliderItems = wrapper.querySelectorAll('.packages-item');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const isMobile = window.matchMedia('(max-width: 959px)').matches;
+
+            if (isMobile) {
+                wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+                createDots();
+            } else {
+                wrapper.style.transform = 'none';
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                dotsContainer.innerHTML = '';
+            }
+        }
+
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            sliderItems.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                if (index === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateSlider();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % sliderItems.length;
+            updateSlider();
+        });
+
+        window.addEventListener('resize', updateSlider);
+        updateSlider();
+    }
+
+}); // Закрываем window.addEventListener('load', ...)
+
+// ============ ФОРМА (ВНЕ load, чтобы не ждать загрузки) ============
+const form = document.querySelector('.contacts__form');
+if (form) {
     const nameInput = form.querySelector('input[name="entry.2059123062"]');
     const emailInput = form.querySelector('input[name="entry.161505263"]');
     const telegramInput = form.querySelector('input[name="entry.1731244058"]');
+
+    // Сообщения об ошибке
+    const nameError = nameInput ? nameInput.parentElement.querySelector('.error-message') : null;
+    const emailError = emailInput ? emailInput.parentElement.querySelector('.error-message') : null;
+    const telegramError = telegramInput ? telegramInput.parentElement.querySelector('.error-message') : null;
+
     const notification = document.getElementById('form-notification');
 
-    const nameError = nameInput?.parentElement.querySelector('.error-message');
-    const emailError = emailInput?.parentElement.querySelector('.error-message');
-    const telegramError = telegramInput?.parentElement.querySelector('.error-message');
+    function isValidName(value) {
+        const regex = /^[A-Za-zА-ЩЬЮЯЄІЇҐа-щьюяєіїґ' -]+$/;
+        return regex.test(value.trim());
+    }
 
-    function isValidName(value) { return /^[A-Za-zА-ЩЬЮЯЄІЇҐа-щьюяєіїґ' -]+$/.test(value.trim()); }
-    function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      let valid = true;
+        e.preventDefault();
 
-      if (nameInput && nameError) {
-        if (!isValidName(nameInput.value)) { valid = false; nameInput.classList.add('error'); nameError.style.display='block'; } 
-        else { nameInput.classList.remove('error'); nameInput.classList.add('valid'); nameError.style.display='none'; }
-      }
+        let valid = true;
 
-      if (emailInput && emailError) {
-        if (!isValidEmail(emailInput.value)) { valid = false; emailInput.classList.add('error'); emailError.style.display='block'; } 
-        else { emailInput.classList.remove('error'); emailInput.classList.add('valid'); emailError.style.display='none'; }
-      }
+        // Проверяем name
+        if (!isValidName(nameInput.value)) {
+            if (nameError) nameError.style.display = 'block';
+            nameInput.classList.remove('valid');
+            nameInput.classList.add('error');
+            valid = false;
+        } else {
+            if (nameError) nameError.style.display = 'none';
+            nameInput.classList.remove('error');
+            nameInput.classList.add('valid');
+        }
 
-      if (telegramInput && telegramError) {
-        if (telegramInput.value.trim() === "") { valid = false; telegramInput.classList.add('error'); telegramError.style.display='block'; } 
-        else { telegramInput.classList.remove('error'); telegramInput.classList.add('valid'); telegramError.style.display='none'; }
-      }
+        // Проверяем email
+        if (!isValidEmail(emailInput.value)) {
+            if (emailError) emailError.style.display = 'block';
+            emailInput.classList.remove('valid');
+            emailInput.classList.add('error');
+            valid = false;
+        } else {
+            if (emailError) emailError.style.display = 'none';
+            emailInput.classList.remove('error');
+            emailInput.classList.add('valid');
+        }
 
-      if (!valid) return;
+        // Проверяем telegram
+        if (telegramInput.value.trim() === "") {
+            if (telegramError) telegramError.style.display = 'block';
+            telegramInput.classList.remove('valid');
+            telegramInput.classList.add('error');
+            valid = false;
+        } else {
+            if (telegramError) telegramError.style.display = 'none';
+            telegramInput.classList.remove('error');
+            telegramInput.classList.add('valid');
+        }
 
-      const formData = new FormData(form);
-      fetch(form.action, { method:'POST', body:formData, mode:'no-cors' })
-        .then(() => {
-          if (notification) notification.style.display = 'block';
-          form.reset();
-          [nameInput,emailInput,telegramInput].forEach(input=>input?.classList.remove('valid'));
-          setTimeout(()=>{if(notification) notification.style.display='none';},5000);
-        }).catch(console.error);
+        if (!valid) return;
+
+        // Отправляем форму
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        }).then(() => {
+            if (notification) notification.style.display = 'block';
+            form.reset();
+            [nameInput, emailInput, telegramInput].forEach(input => {
+                input.classList.remove('valid');
+            });
+            setTimeout(() => {
+                if (notification) notification.style.display = 'none';
+            }, 5000);
+        }).catch((error) => {
+            console.error('Ошибка отправки:', error);
+        });
     });
-  }
 
+    // Подсветка бордера при вводе, без текста
+    nameInput.addEventListener('input', () => {
+        if (isValidName(nameInput.value)) {
+            nameInput.classList.remove('error');
+            nameInput.classList.add('valid');
+        } else {
+            nameInput.classList.remove('valid');
+            nameInput.classList.add('error');
+        }
+        if (nameError) nameError.style.display = 'none';
+    });
+
+    emailInput.addEventListener('input', () => {
+        if (isValidEmail(emailInput.value)) {
+            emailInput.classList.remove('error');
+            emailInput.classList.add('valid');
+        } else {
+            emailInput.classList.remove('valid');
+            emailInput.classList.add('error');
+        }
+        if (emailError) emailError.style.display = 'none';
+    });
+
+    telegramInput.addEventListener('input', () => {
+        if (telegramInput.value.trim() !== "") {
+            telegramInput.classList.remove('error');
+            telegramInput.classList.add('valid');
+        } else {
+            telegramInput.classList.remove('valid');
+            telegramInput.classList.add('error');
+        }
+        if (telegramError) telegramError.style.display = 'none';
+    });
+
+    // Сброс ошибок при клике вне формы
+    document.addEventListener('click', (event) => {
+        if (!form.contains(event.target)) {
+            [nameError, emailError, telegramError].forEach(error => {
+                if (error) error.style.display = 'none';
+            });
+            [nameInput, emailInput, telegramInput].forEach(input => {
+                input.classList.remove('error');
+            });
+        }
+    });
+}
+
+// ============ СКРОЛЛ БАТАРЕЙКИ ============
+window.addEventListener('scroll', () => {
+    const contactsImage = document.getElementById('animated-battery');
+    if (!contactsImage) return;
+
+    const rect = contactsImage.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top >= windowHeight || rect.bottom <= 0) {
+        contactsImage.style.transform = 'scale(1) translateX(0)';
+        return;
+    }
+
+    const visible = Math.min(windowHeight - rect.top, windowHeight);
+    const progress = Math.max(0, Math.min(visible / windowHeight, 1));
+
+    const scale = 1 + progress * 0.2;
+    const translateX = progress * 40;
+
+    contactsImage.style.transform = `scale(${scale}) translateX(${translateX}px)`;
 });
