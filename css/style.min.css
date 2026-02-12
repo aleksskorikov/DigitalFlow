@@ -125,7 +125,7 @@
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 
 }
 
@@ -138,6 +138,19 @@
     background: linear-gradient(0deg, #13c0ce 0%, #7d2de7 100%);
     border-radius: 6px;
 }
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  height: 15px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='Indigo' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 15l6-6 6 6H6z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 16px;
+}
+
+/* Нижня стрілка */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  height: 15px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='Indigo' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6H6z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 16px;
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -2313,7 +2326,15 @@ body {
     gap: 25px;
 
 }
-
+#form-notification {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+    display: none; 
+}
 
 .form-group {
     position: relative;
@@ -2363,6 +2384,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
 }
 
 .contacts__input {
@@ -2732,7 +2754,26 @@ body {
         width: 40px;
         height: 40px;
         position: relative;
+
     }
+
+
+    .contacts__descr {
+        position: absolute;
+        top: 70px;
+    }
+
+    #form-notification {
+        width: 100%;
+        position: absolute;
+        top: -20px;
+        left: 65%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 12px;
+        display: none; 
+    }
+
 
     .contacts__descr-img img {
         position: relative;

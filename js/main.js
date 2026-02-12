@@ -263,49 +263,101 @@ const close = document.querySelector('.header__close');
     return;
   }
 
+const radios = document.querySelectorAll('input[name="language"]');
+const labels = document.querySelectorAll('.header__lang-switch label');
+const bg = document.querySelector('.lang-bg');
+const bgMobile = document.querySelector('.lang-bg-mobile');
 
+// Получаем язык из localStorage или по умолчанию
+let storedLang = localStorage.getItem('language') || 'EN';
 
-  const storedLang = localStorage.getItem('language') || 'EN';
-  const radios = document.querySelectorAll('input[name="language"]');
-  const labels = document.querySelectorAll('.header__lang-switch label');
-  const bg = document.querySelector('.lang-bg');
-  const bgMobile = document.querySelector('.lang-bg-mobile');
+// Обновляем фон и цвет
+function updateBackgrounds(language) {
+  if (bg) bg.style.transform = language === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
+  if (bgMobile) bgMobile.style.transform = language === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
+}
 
-  const buttons = document.querySelectorAll('.careers__btn');
-  const texts = document.querySelectorAll('.careers__text');
-  const priorityImg = document.querySelectorAll('.careers__img');
-
-  // --- Переключение языков ---
-  function updateBackgrounds(lang) {
-    if (bg) bg.style.transform = lang === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
-    if (bgMobile) bgMobile.style.transform = lang === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
-  }
-
-  function updateLabelsColor() {
-    labels.forEach(label => {
-      const forId = label.getAttribute('for');
-      const radio = document.getElementById(forId);
-      label.style.color = radio.checked ? 'white' : '';
-    });
-  }
-
-  const initialRadio = Array.from(radios).find(r => r.value === storedLang);
-  if (initialRadio) {
-    initialRadio.checked = true;
-    updateBackgrounds(storedLang);
-    updateLabelsColor();
-  }
-
-  radios.forEach(r => {
-    r.addEventListener('change', () => {
-      const currentLang = localStorage.getItem('language');
-      if (r.checked && r.value !== currentLang) {
-        localStorage.setItem('language', r.value);
-        localStorage.setItem('languageChanged', 'true');
-        location.reload();
-      }
-    });
+function updateLabelsColor() {
+  labels.forEach(label => {
+    const forId = label.getAttribute('for');
+    const radio = document.getElementById(forId);
+    label.style.color = radio.checked ? 'white' : '';
   });
+}
+
+radios.forEach(r => {
+  r.checked = r.value === storedLang;
+});
+updateBackgrounds(storedLang);
+updateLabelsColor();
+
+
+radios.forEach(r => {
+  r.addEventListener('change', () => {
+    if (r.checked) {
+      const language = r.value;
+      // console.log("[Header] Выбран язык:", language);
+
+      storedLang = language;
+      localStorage.setItem('language', language);
+
+      updateBackgrounds(language);
+      updateLabelsColor();
+
+      document.dispatchEvent(new CustomEvent('languageChanged', { detail: language.toLowerCase() }));
+
+      location.reload();
+    }
+  });
+});
+
+
+
+  // const storedLang = localStorage.getItem('language') || 'EN';
+  // const radios = document.querySelectorAll('input[name="language"]');
+  // const labels = document.querySelectorAll('.header__lang-switch label');
+  // const bg = document.querySelector('.lang-bg');
+  // const bgMobile = document.querySelector('.lang-bg-mobile');
+
+  // const buttons = document.querySelectorAll('.careers__btn');
+  // const texts = document.querySelectorAll('.careers__text');
+  // const priorityImg = document.querySelectorAll('.careers__img');
+
+  // // --- Переключение языков ---
+  // function updateBackgrounds(lang) {
+  //   if (bg) bg.style.transform = lang === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
+  //   if (bgMobile) bgMobile.style.transform = lang === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
+  // }
+
+  // function updateLabelsColor() {
+  //   labels.forEach(label => {
+  //     const forId = label.getAttribute('for');
+  //     const radio = document.getElementById(forId);
+  //     label.style.color = radio.checked ? 'white' : '';
+  //   });
+  // }
+
+  // const initialRadio = Array.from(radios).find(r => r.value === storedLang);
+  // if (initialRadio) {
+  //   initialRadio.checked = true;
+  //   updateBackgrounds(storedLang);
+  //   updateLabelsColor();
+  // }
+
+  // radios.forEach(r => {
+  //   r.addEventListener('change', () => {
+  //     const currentLang = localStorage.getItem('language');
+  //     if (r.checked && r.value !== currentLang) {
+  //       localStorage.setItem('language', r.value);
+  //       localStorage.setItem('languageChanged', 'true');
+  //       location.reload();
+  //     }
+  //   });
+  // });
+
+  
+
+
   // --- Карьерные кнопки ---
   buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
@@ -563,22 +615,18 @@ const close = document.querySelector('.header__close');
 
 
 
-
-
-
-
-
 const form = document.querySelector('.contacts__form');
-const nameInput = form.querySelector('input[name="entry.205358548"]');
-const emailInput = form.querySelector('input[name="entry.171842244"]');
-const telegramInput = form.querySelector('input[name="entry.38569460"]');
+const nameInput = form.querySelector('input[name="entry.2059123062"]');
+const emailInput = form.querySelector('input[name="entry.161505263"]');
+const telegramInput = form.querySelector('input[name="entry.1731244058"]');
 
-// Находим соответствующие элементы сообщений об ошибке
+// Сообщения об ошибке
 const nameError = nameInput.parentElement.querySelector('.error-message');
 const emailError = emailInput.parentElement.querySelector('.error-message');
 const telegramError = telegramInput.parentElement.querySelector('.error-message');
 
-// Функции проверки
+const notification = document.getElementById('form-notification');
+
 function isValidName(value) {
   const regex = /^[A-Za-zА-ЩЬЮЯЄІЇҐа-щьюяєіїґ' -]+$/;
   return regex.test(value.trim());
@@ -589,11 +637,12 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-// Валидация при отправке формы
 form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
   let valid = true;
 
-  // Проверка имени
+  // Проверяем name
   if (!isValidName(nameInput.value)) {
     nameError.style.display = 'block';
     nameInput.classList.remove('valid');
@@ -605,7 +654,7 @@ form.addEventListener('submit', (e) => {
     nameInput.classList.add('valid');
   }
 
-  // Проверка email
+  // Проверяем email
   if (!isValidEmail(emailInput.value)) {
     emailError.style.display = 'block';
     emailInput.classList.remove('valid');
@@ -617,7 +666,7 @@ form.addEventListener('submit', (e) => {
     emailInput.classList.add('valid');
   }
 
-  // Проверка Telegram (может быть необязательным, если нужно)
+  // Проверяем telegram
   if (telegramInput.value.trim() === "") {
     telegramError.style.display = 'block';
     telegramInput.classList.remove('valid');
@@ -629,76 +678,73 @@ form.addEventListener('submit', (e) => {
     telegramInput.classList.add('valid');
   }
 
-  // Если есть ошибки - отменяем отправку
-  if (!valid) {
-    e.preventDefault();
-  }
+  if (!valid) return; // Если есть ошибки, не отправляем
+
+  // Отправляем форму
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    mode: 'no-cors'
+  }).then(() => {
+    notification.style.display = 'block';
+    form.reset();
+    [nameInput, emailInput, telegramInput].forEach(input => {
+      input.classList.remove('valid');
+    });
+    setTimeout(() => {
+      notification.style.display = 'none';
+    }, 5000);
+  }).catch((error) => {
+    console.error('Ошибка отправки:', error);
+  });
 });
 
-// Подсветка ошибок при вводе
+// Подсветка бордера при вводе, без текста
 nameInput.addEventListener('input', () => {
   if (isValidName(nameInput.value)) {
-    nameError.style.display = 'none';
     nameInput.classList.remove('error');
     nameInput.classList.add('valid');
   } else {
-    nameError.style.display = 'block';
     nameInput.classList.remove('valid');
     nameInput.classList.add('error');
   }
+  nameError.style.display = 'none'; // скрываем текст ошибки при вводе
 });
 
 emailInput.addEventListener('input', () => {
   if (isValidEmail(emailInput.value)) {
-    emailError.style.display = 'none';
     emailInput.classList.remove('error');
     emailInput.classList.add('valid');
   } else {
-    emailError.style.display = 'block';
     emailInput.classList.remove('valid');
     emailInput.classList.add('error');
   }
+  emailError.style.display = 'none'; // скрываем текст ошибки при вводе
 });
 
 telegramInput.addEventListener('input', () => {
   if (telegramInput.value.trim() !== "") {
-    telegramError.style.display = 'none';
     telegramInput.classList.remove('error');
     telegramInput.classList.add('valid');
   } else {
-    telegramError.style.display = 'block';
     telegramInput.classList.remove('valid');
     telegramInput.classList.add('error');
   }
+  telegramError.style.display = 'none'; // скрываем текст ошибки при вводе
 });
 
 // Сброс ошибок при клике вне формы
 document.addEventListener('click', (event) => {
-    const form = document.querySelector('.contacts__form');
-    if (!form.contains(event.target)) {
-        form.querySelectorAll('.error-message').forEach(msg => {
-            msg.style.display = 'none';
-        });
-        form.querySelectorAll('.contacts__input').forEach(input => {
-            input.classList.remove('error');
-        });
-    }
+  if (!form.contains(event.target)) {
+    [nameError, emailError, telegramError].forEach(error => {
+      error.style.display = 'none';
+    });
+    [nameInput, emailInput, telegramInput].forEach(input => {
+      input.classList.remove('error');
+    });
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 });
 
