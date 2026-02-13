@@ -101,7 +101,6 @@ const careersTexts = {
 
 
 function updatePackagesLang(language) {
-  console.log("[Section] Обновляем язык:", language);
   const obj = langObj[language]?.packages;
   if (!obj) return;
 
@@ -126,7 +125,6 @@ function updatePackagesLang(language) {
 }
 
 function updateCareersLang(lang) {
-  console.log("[Careers] Выбран язык:", lang);
 
   const obj = careersTexts[lang];
   if (!obj) return;

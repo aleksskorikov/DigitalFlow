@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         subtitle: 'У спільноті впроваджено системний digital-підхід, що дозволяє проєктам відмовитися від рутинних операцій і зосередитися на автоматизації, архітектурі процесів та масштабуванні кешфлоу.'
       },
       models: {
-        title: ['BI-ETL', 'GTM', "Growth", "PLG-продукти"],
+        title: ['BI-ETL', 'GTM-процеси', "Growth-моделі", "PLG-продукти"],
         spans: ['у digital-проєктах','у digital-проєктах','у digital-проєктах','в digital-макетингу'],
         descr: ['BI-ETL— масштабований інструмент для посилення аналітики в маркетингових проєктах. Ми вибудовуємо архітектуру даних під завдання digital-проєктів: автоматизуємо збір, обробку та інтеграцію інформації для масштабованих воронок і стійкого зростання.', "GTM-процеси — це структурований підхід до виведення продуктів і рішень на ринок. У спільноті вибудувані стратегії запуску, позиціювання, сегментація та воронки. Акцент на узгодженості команд, BI-аналітиці та масштабуванні забезпечує передбачуване зростання й контроль над результатами.", "Growth-моделі — ефективний інструмент для побудови стійкого розвитку проєктів. У спільноті розробляються та впроваджуються моделі, які допомагають оптимізувати процеси залучення й утримання клієнтів, підвищуючи конверсію та масштабованість проєктних рішень.", "PLG-продукти — стратегічний формат зростання, заснований на цінності продукту. У спільноті формується та впроваджується система практик, що забезпечує органічне зростання, високу залученість і довгострокове утримання користувачів через продуктовий досвід."]
       },
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       format: {
         circleText: 'Формат',
-        title: 'Манимейкинговые',
+        title: 'Манімейкінгові',
         titleSecondLine: 'GTM-системи',
         cornerText: 'Прогресивні практики зростання',
         blockFirst: 'Спільнотою реалізуються манімейкінгові GTM-проєкти, що розвиваються в контурі єдиної стратегічної моделі. Кожен проєкт є частиною загальної GTM-архітектури та адаптований під цільові сегменти для масштабованого зростання.',
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         subtitle: 'The community has implemented a systematic digital approach that allows projects to abandon routine operations and focus on automation, process architecture, and cash flow scaling.'
     },
     models: {
-        title: ['BI-ETL', 'GTM', "Growth", "PLG-products"],
+        title: ['BI-ETL', 'GTM processes', "Growth models", "PLG-products"],
         spans: ['in digital projects','in digital projects','in digital projects','in digital marketing'],
         descr: ['BI-ETL is a scalable tool for strengthening analytics in marketing projects. We build a data architecture for digital projects: we automate the collection, processing, and integration of information for scalable funnels and sustainable growth.', "GTM processes are a structured approach to bringing products and solutions to market. The community has built launch strategies, positioning, segmentation, and funnels. The emphasis on team alignment, BI analytics, and scaling ensures predictable growth and control over results.", "Growth models are an effective tool for building sustainable project development. The community develops and implements models that help optimize customer acquisition and retention processes, increasing the conversion and scalability of project solutions.", "PLG products are a strategic growth format based on product value. The community develops and implements a system of practices that ensures organic growth, high engagement, and long-term user retention through product experience."]
     },

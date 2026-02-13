@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const next = (index + 1) % items.length;
 
       items[index].classList.add('carousel__item--main');
-      items[index].style.transition = 'transform 1.5s cubic-bezier(.22,.61,.36,1), opacity 0.6s ease';
+      items[index].style.transition = 'transform 2s cubic-bezier(.22,.61,.36,1), opacity 1.5s ease';
 
       items[prev].classList.add('carousel__item--top');
       items[next].classList.add('carousel__item--bottom');
@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => render());
 
   render();
-  timer = setInterval(nextSlide, 2500);
+  timer = setInterval(nextSlide, 3000);
 
   const contactFullText = document.querySelector('[data-elem-id="1643490172735"]');
 });
+
 
 
