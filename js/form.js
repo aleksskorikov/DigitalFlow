@@ -35,10 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-
-
-
   function nextSlide() {
     const prevIndex = index;
     index = (index + 1) % items.length;
