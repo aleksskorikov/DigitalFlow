@@ -1,57 +1,55 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const items = document.querySelectorAll('.carousel__item');
+const items = document.querySelectorAll('.carousel__item');
+let index = 0;
 
-  let index = 0;
-  let timer;
+function render(withEnter = false) {
+  items.forEach(el => {
+    el.classList.remove(
+      'carousel__item--top',
+      'carousel__item--main',
+      'carousel__item--bottom',
+      'carousel__item--exit',
+      'carousel__item--enter'
+    );
+  });
 
-  function isMobile() {
-    return window.innerWidth <= 640;
+  const main = index;
+  const bottom = (index + 1) % items.length;
+  const top = (index + 2) % items.length;
+
+  items[main].classList.add('carousel__item--main');
+  items[bottom].classList.add('carousel__item--bottom');
+  items[top].classList.add('carousel__item--top');
+
+  if (withEnter) {
+    items[main].classList.add('carousel__item--enter');
   }
+}
 
-  function render(prevIndex = null) {
-    const mobile = isMobile();
+function nextSlide() {
+  const currentMain = items[index];
 
-    items.forEach(el => {
-      if (!el.classList.contains('carousel__item--exit')) {
-        el.className = 'carousel__item';
-      }
-      el.style.transition = 'none';
-      el.classList.add('carousel__item--top');
-    });
+  currentMain.classList.add('carousel__item--exit');
 
-    if (mobile) {
-      items[index].classList.add('carousel__item--main');
-    } else {
-      const prev = (index - 1 + items.length) % items.length;
-      const next = (index + 1) % items.length;
+  currentMain.addEventListener(
+    'animationend',
+    () => {
+      currentMain.classList.remove('carousel__item--exit');
+      index = (index + 1) % items.length;
+      render(true);
+    },
+    { once: true }
+  );
+}
 
-      items[index].classList.add('carousel__item--main');
-      items[index].style.transition = 'transform 2s cubic-bezier(.22,.61,.36,1), opacity 1.5s ease';
+render(true);
+setInterval(nextSlide, 3000);
 
-      items[prev].classList.add('carousel__item--top');
-      items[next].classList.add('carousel__item--bottom');
-    }
-  }
 
-  function nextSlide() {
-    const prevIndex = index;
-    index = (index + 1) % items.length;
-    items[prevIndex].classList.add('carousel__item--exit');
 
-    items[prevIndex].addEventListener('animationend', () => {
-      items[prevIndex].classList.remove('carousel__item--exit');
-      render(); 
-    }, { once: true });
 
-    render();
-  }
-
-  window.addEventListener('resize', () => render());
-
-  render();
-  timer = setInterval(nextSlide, 3000);
 
   const contactFullText = document.querySelector('[data-elem-id="1643490172735"]');
 });

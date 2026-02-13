@@ -170,10 +170,14 @@
 }
 
 
+.careers__block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .careers__right {
     position: relative;
-    width: 420px;
-    height: 520px;
 }
 
 .careers__left {
@@ -183,8 +187,8 @@
 .careers__left::after {
     content: '';
     position: absolute;
-    right: -5%;
-    bottom: 5%;
+    right: -15%;
+    bottom: 0%;
     width: 28px;
     height: 28px;
     background: url('../images/Ellipse-5.svg') no-repeat center / contain;
@@ -194,8 +198,8 @@
 .careers__left::before{
     content: '';
     position: absolute;
-    right: 0;
-    bottom: 10%;
+    right: -10%;
+    bottom: 5%;
     width: 60px;
     height: 60px;
     background: url('../images/Ellipse-3.svg') no-repeat center / contain;
@@ -203,87 +207,8 @@
 }
 
 
-.carousel__item {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 550px;
-    height: 310px;
-    border-radius: 24px;
 
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0;
-
-    transition:
-        transform 1.5s cubic-bezier(.22, .61, .36, 1),
-        opacity 0.6s ease;
-
-    z-index: 1;
-    backface-visibility: hidden;
-    will-change: transform, opacity;
-}
-
-/* ===== ФОН ТОЛЬКО ДЛЯ ГЛАВНОЙ КАРТОЧКИ ===== */
-.carousel__item--main::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-
-    background: url(../images/slide-activ.png) no-repeat center / cover;
-
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    transition-delay: 0.6s;
-    /* задержка перед проявлением фона */
-    z-index: -1;
-
-    pointer-events: none;
-}
-
-/* верхняя карточка */
-.carousel__item--top {
-    background: url(../images/Gradient.png) no-repeat center / cover;
-    transform: translate(-50%, -70%) scale(0.92);
-    opacity: 1;
-    z-index: 3;
-}
-
-/* нижняя карточка */
-.carousel__item--bottom {
-    background: url(../images/Gradient.png) no-repeat center / cover;
-    transform: translate(-50%, -30%) scale(0.92);
-    opacity: 1;
-    z-index: 3;
-}
-
-/* главная карточка */
-.carousel__item--main {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    z-index: 5;
-}
-
-/* карточка выходит */
-.carousel__item--exit {
-    z-index: 4;
-    animation: slideUpFade 1.3s forwards;
-}
-
-/* анимация подъёма */
-@keyframes slideUpFade {
-    from {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-
-    to {
-        transform: translate(-50%, -70%) scale(0.92);
-        opacity: 0;
-    }
-}
-
-/* .carousel {
+.carousel {
     position: relative;
     width: 100%;
     height: 100%;
@@ -296,163 +221,81 @@
     width: 550px;
     height: 310px;
     border-radius: 24px;
-
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0;
-
-    transition:
-        transform 1.5s cubic-bezier(.22, .61, .36, 1),
-        opacity 0.6s ease;
-
-    z-index: 1;
-    backface-visibility: hidden;
-    will-change: transform, opacity;
+    transform: translate(-50%, -50%) scale(0.90);
 }
 
-/* ===== ФОН ТОЛЬКО ДЛЯ ГЛАВНОЙ КАРТОЧКИ ===== */
-.carousel__item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
+/* ===== статичные задние ===== */
 
+.carousel__item--top {
+    background: url(../images/Gradient.png) no-repeat center / cover;
+    transform: translate(-50%, -70%) scale(0.90);
+    z-index: 1;
+}
+
+.carousel__item--bottom {
+    background: url(../images/Gradient.png) no-repeat center / cover;
+    transform: translate(-50%, -30%) scale(0.90);
+    z-index: 1;
+}
+
+/* ===== активная ===== */
+
+.carousel__item--main {
     background: url(../images/slide-activ.png) no-repeat center / cover;
-
-    opacity: 0;
-    transition: opacity 1s ease;
-    z-index: -1;
-
-    pointer-events: none;
-}
-
-/* запрещаем фон у всех НЕ-главных */
-.carousel__item:not(.carousel__item--main)::before {
-    opacity: 0 !important;
-    transition: none !important;
-}
-
-/* плавное появление фона у главной карточки */
-.carousel__item--main::before {
-    opacity: 1;
-    transition-delay: 0.1s;
-    /* фон появляется во время подъёма */
-}
-
-/* верхняя карточка */
-.carousel__item--top {
-    background: url(../images/Gradient.png) no-repeat center / cover;
-    transform: translate(-50%, -70%) scale(0.92);
-    opacity: 1;
-    z-index: 3;
-}
-
-/* нижняя карточка */
-.carousel__item--bottom {
-    background: url(../images/Gradient.png) no-repeat center / cover;
-    transform: translate(-50%, -30%) scale(0.92);
-    opacity: 1;
-    z-index: 3;
-}
-
-/* главная карточка */
-.carousel__item--main {
     transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    z-index: 5;
-}
-
-/* карточка выходит */
-.carousel__item--exit {
-    z-index: 4;
-    animation: slideUpFade 1.2s linear;
-}
-
-/* анимация подъёма */
-@keyframes slideUpFade {
-    from {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-
-    to {
-        transform: translate(-50%, -70%) scale(0.92);
-        opacity: 0;
-    }
-} 
-
-/* .carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel__item {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 550px;
-    height: 310px;
-    border-radius: 24px;
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0;
-    transition:
-        transform 1.5s cubic-bezier(.22, .61, .36, 1),
-        opacity 0.6s ease;
-    z-index: 1;
-}
-
-
-.carousel__item--top {
-    background-image: url(../images/Gradient.png);
-        background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(-50%, -70%) scale(0.92);
-    opacity: 1;
     z-index: 3;
 }
 
-.carousel__item--bottom {
-    background-image: url(../images/Gradient.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(-50%, -30%) scale(0.92);
-    opacity: 1;
-    z-index: 3;
-}
-
-.carousel__item--main {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    z-index: 5;
-    background-image: url(../images/slide-activ.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: 
-    transform 1.5s cubic-bezier(.22, .61, .36, 1), 
-    opacity 0.6s ease;
-}
-
+/* ===== уход ===== */
 
 .carousel__item--exit {
-    animation: slideUpFade 1s forwards;
+    animation: mainOut 2.5s cubic-bezier(.22, .61, .36, 1);
     z-index: 4;
 }
 
+/* ===== появление + пауза ===== */
 
-@keyframes slideUpFade {
+.carousel__item--enter {
+    animation: mainInHold 6s cubic-bezier(.22, .61, .36, 1);
+    z-index: 5;
+}
+
+
+
+/* ================= ANIMATIONS ================= */
+
+ @keyframes mainInHold {
     0% {
+        transform: translate(-50%, -30%) scale(0.90);
+    }
+
+    30% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1);
     }
 
     100% {
-        transform: translate(-50%, -70%) scale(0.92);
-        opacity: 0;
+        transform: translate(-50%, -70%) scale(0.90);
     }
-} */
+} 
+
+
+
+@keyframes mainOut {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        transform: translate(-50%, -70%) scale(0.90);
+    }
+}
+
+
+
 
 .careers-pagination{
     position: absolute;
