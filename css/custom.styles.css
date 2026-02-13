@@ -202,6 +202,9 @@
     z-index: 100;
 }
 
+
+
+
 .carousel {
     position: relative;
     width: 100%;
@@ -223,15 +226,6 @@
     z-index: 1;
 }
 
-.carousel__item--main {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    z-index: 5;
-    background-image: url(../images/slide-activ.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 
 .carousel__item--top {
     background-image: url(../images/Gradient.png);
@@ -245,13 +239,65 @@
 
 .carousel__item--bottom {
     background-image: url(../images/Gradient.png);
-        background-size: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     transform: translate(-50%, -30%) scale(0.92);
     opacity: 0.6;
     z-index: 3;
 }
+
+.carousel__item--main {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 5;
+    background-image: url(../images/slide-activ.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 
+    transform 1.5s cubic-bezier(.22, .61, .36, 1), 
+    opacity 0.6s ease;
+}
+
+.carousel__item--exit {
+    animation: slideUpFade 1s forwards;
+    z-index: 4;
+}
+
+
+@keyframes slideUpFade {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -70%) scale(0.92);
+        opacity: 0;
+    }
+}
+
+.careers-pagination{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    top: 50%;
+    left: 95%;
+    transform: translateY(-50%);
+}
+
+
+.dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4A75DB;
+}
+
+
 
 .slider-block{
     display: flex;
@@ -324,16 +370,15 @@
     gap: 13px;
 }
 
-.careers-pagination__dot {
+.dot {
+    display: block;
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background: #4A75DB;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.careers-pagination__dot.active {
+.dot.dot-active {
     width: 16px;
     height: 16px;
     background: #7737E5;

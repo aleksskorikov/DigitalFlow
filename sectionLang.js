@@ -43,12 +43,12 @@ const careersTexts = {
     title: "Наші",
     subtitle: "пріоритети",
     paragraphs: {
-      one: "Ком’юніті створює та постійно вдосконалює ефективні трафік-системи, що забезпечують стабільний та передбачуваний результат на всіх етапах масштабування.",
-      two: "Учасники ком’юніті працюють з ефективними зв’язками, тестують нові підходи, оптимізують процеси та масштабують результат."
+      one: "Value Growth Systems трансформує ваш досвід і перевірені гіпотези в вимірювану Business Value, перетворюючи операційні процеси в масштабовані системи зростання.",
+      two: "Архітектура Activity-Based Abstraction агрегує завдання в цілісні стратегічні блоки, трансформуючи операційну діяльність у прозору модель процесу для прийняття рішень щодо масштабування."
     },
     btns: {
-      one: "Вектор",
-      two: "Цінність"
+      one: "VGS",
+      two: "ABA"
     },
     sliders: [
       {
@@ -72,12 +72,12 @@ const careersTexts = {
     title: "Our",
     subtitle: "Priorities",
     paragraphs: {
-      one: "The community creates and continuously improves effective traffic systems that ensure stable and predictable results at all stages of scaling.",
-      two: "Community members work with effective connections, test new approaches, optimize processes, and scale results."
+      one: "Value Growth Systems transforms your experience and proven hypotheses into measurable Business Value, turning operational processes into scalable growth systems.",
+      two: "Activity-Based Abstraction architecture aggregates tasks into coherent strategic blocks, transforming operational activities into a transparent process model for scaling decisions."
     },
     btns: {
-      one: "Vector",
-      two: "Value"
+      one: "VGS",
+      two: "ABA"
     },
     sliders: [
       {

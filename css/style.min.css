@@ -1880,8 +1880,8 @@ body {
     background: var(--color-grey-96);
 }
 .services__icon {
-    width: 100px;
-    height: 100px;
+    width: 135px;
+    height: 135px;
 }
 .services__icon-img {
     display: block;
@@ -2230,10 +2230,10 @@ body {
     text-align: right;
     color: var(--color-blue-21) !important;
 }
-
-
-
-
+/* 
+#rec403116442 .tn-elem[data-elem-id='1642680374604']{
+    padding-top: 25px !important;
+} */
 
 
 

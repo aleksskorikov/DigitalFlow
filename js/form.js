@@ -1,81 +1,63 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-const items = document.querySelectorAll('.carousel__item');
-const pagination = document.querySelector('.careers-pagination');
+  const items = document.querySelectorAll('.carousel__item');
 
-let index = 0; 
-let timer;
+  let index = 0;
+  let timer;
 
-function isMobile() {
-  return window.innerWidth <= 640;
-}
-
-pagination.innerHTML = ''; 
-items.forEach((_, i) => {
-  const dot = document.createElement('div');
-  dot.classList.add('careers-pagination__dot');
-
-  dot.addEventListener('click', () => {
-    index = i;
-    render();
-    restartAutoplay();
-  });
-
-  pagination.appendChild(dot);
-});
-
-const dots = document.querySelectorAll('.careers-pagination__dot');
-
-function render() {
-  const mobile = isMobile();
-
-  items.forEach(el => el.className = 'carousel__item'); 
-  dots.forEach(dot => dot.classList.remove('active'));
-
-  if (mobile) {
-
-    items[index].classList.add('carousel__item--main');
-  } else {
-    const prev = (index - 1 + items.length) % items.length;
-    const next = (index + 1) % items.length;
-
-    items[index].classList.add('carousel__item--main');
-    items[prev].classList.add('carousel__item--top');
-    items[next].classList.add('carousel__item--bottom');
+  function isMobile() {
+    return window.innerWidth <= 640;
   }
 
-  dots[index].classList.add('active');
-}
+  function render(prevIndex = null) {
+    const mobile = isMobile();
 
-function nextSlide() {
-  index = (index + 1) % items.length;
+    items.forEach(el => {
+      if (!el.classList.contains('carousel__item--exit')) {
+        el.className = 'carousel__item';
+      }
+      el.style.transition = 'none';
+      el.classList.add('carousel__item--top');
+    });
+
+    if (mobile) {
+      items[index].classList.add('carousel__item--main');
+    } else {
+      const prev = (index - 1 + items.length) % items.length;
+      const next = (index + 1) % items.length;
+
+      items[index].classList.add('carousel__item--main');
+      items[index].style.transition = 'transform 1.5s cubic-bezier(.22,.61,.36,1), opacity 0.6s ease';
+
+      items[prev].classList.add('carousel__item--top');
+      items[next].classList.add('carousel__item--bottom');
+    }
+  }
+
+
+
+
+
+  function nextSlide() {
+    const prevIndex = index;
+    index = (index + 1) % items.length;
+    items[prevIndex].classList.add('carousel__item--exit');
+
+    items[prevIndex].addEventListener('animationend', () => {
+      items[prevIndex].classList.remove('carousel__item--exit');
+      render(); 
+    }, { once: true });
+
+    render();
+  }
+
+  window.addEventListener('resize', () => render());
+
   render();
-}
-
-function restartAutoplay() {
-  clearInterval(timer);
   timer = setInterval(nextSlide, 2500);
-}
 
-window.addEventListener('resize', () => {
-  render();
+  const contactFullText = document.querySelector('[data-elem-id="1643490172735"]');
 });
-
-render();
-timer = setInterval(nextSlide, 2500);
-
-
-
-  const contactFullText= document.querySelector('[data-elem-id="1643490172735"]');
-
-});
-
-
-
-
-
-
-
 
 
