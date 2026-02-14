@@ -65,6 +65,21 @@ const careersTexts = {
         title: "Blueprint Lab",
         subtitle: "Каталог реалізованих проєктів",
         text: "Розгляд стратегій, реальних інструментів і готових моделей, які можна адаптувати та впровадити у свою практику."
+      },
+          {
+        title: "Toolbox Skills",
+        subtitle: "Бібліотека практичних курсів",
+        text: "Покрокові матеріали з освоєння інструментів та компетенцій для ефективної роботи в digital."
+      },
+      {
+        title: "Backstage Pass",
+        subtitle: "Колекція профільних зустрічей",
+        text: "Прямі ефіри та виступи запрошених експертів із аналізом трендів та відповідями на питання учасників."
+      },
+      {
+        title: "Blueprint Lab",
+        subtitle: "Каталог реалізованих проєктів",
+        text: "Розгляд стратегій, реальних інструментів і готових моделей, які можна адаптувати та впровадити у свою практику."
       }
   
     ]
@@ -82,6 +97,21 @@ const careersTexts = {
     },
     sliders: [
       {
+        title: "Toolbox Skills",
+        subtitle: "Practical courses library",
+        text: "Step-by-step materials to master the tools and skills necessary for professional work in digital."
+      },
+      {
+        title: "Backstage Pass",
+        subtitle: "Collection of profile meetings",
+        text: "Live sessions and presentations of invited experts with trend analysis and participant Q&A."
+      },
+      {
+        title: "Blueprint Lab",
+        subtitle: "Catalog of implemented projects",
+        text: "Analysis of strategies, real tools, and ready-made models that can be adapted and implemented in your practice."
+      },
+          {
         title: "Toolbox Skills",
         subtitle: "Practical courses library",
         text: "Step-by-step materials to master the tools and skills necessary for professional work in digital."

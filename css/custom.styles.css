@@ -207,7 +207,99 @@
 }
 
 
+/* ================== CONTAINER ================== */
 
+.carousel {
+    width: 100%;
+    height: 430px;
+    position: relative;
+    overflow: visible;
+}
+
+/* ================== SWIPER ================== */
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================== SLIDE BASE ================== */
+
+.carousel__item {
+    position: relative;
+    width: 550px;
+    height: 310px !important;
+    border-radius: 24px;
+    background: url(../images/Gradient.png) no-repeat center / cover;
+    transform: scale(0.9) !important;
+    opacity: 0.6;
+    z-index: 1;
+    transition:
+        transform 0.7s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.9s ease,
+        z-index 0s;
+}
+
+/* ================== ACTIVE ================== */
+
+.swiper-slide-active {
+    transform: scale(1) !important;
+    opacity: 1;
+    width: 550px;
+    max-height: 310px;
+    height: 100%;
+    background: url(../images/slide-activ.png) no-repeat center / cover;
+    z-index: 10;
+}
+
+/* ================== NEIGHBORS ================== */
+
+.swiper-slide-prev,
+.swiper-slide-next {
+    transform: scale(0.9);
+    opacity: 0.8;
+    z-index: 5;
+}
+
+/* ================== FAR SLIDES ================== */
+
+.swiper-slide:not(.swiper-slide-active,
+    .swiper-slide-prev,
+    .swiper-slide-next) {
+    transform: scale(0.8) !important;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* ================== INNER CONTENT FIX ================== */
+
+.carousel__item * {
+    pointer-events: none;
+}
+
+/* ================== PAGINATION ================== */
+
+.careers-pagination {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.careers-pagination .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.careers-pagination .dot-active {
+    background: #000;
+}
+
+/* 
 .carousel {
     position: relative;
     width: 100%;
@@ -224,8 +316,6 @@
     transform: translate(-50%, -50%) scale(0.90);
 }
 
-/* ===== статичные задние ===== */
-
 .carousel__item--top {
     background: url(../images/Gradient.png) no-repeat center / cover;
     transform: translate(-50%, -70%) scale(0.90);
@@ -238,7 +328,6 @@
     z-index: 1;
 }
 
-/* ===== активная ===== */
 
 .carousel__item--main {
     background: url(../images/slide-activ.png) no-repeat center / cover;
@@ -246,23 +335,18 @@
     z-index: 3;
 }
 
-/* ===== уход ===== */
 
 .carousel__item--exit {
     animation: mainOut 2.5s cubic-bezier(.22, .61, .36, 1);
     z-index: 4;
 }
 
-/* ===== появление + пауза ===== */
 
 .carousel__item--enter {
     animation: mainInHold 6s cubic-bezier(.22, .61, .36, 1);
     z-index: 5;
 }
 
-
-
-/* ================= ANIMATIONS ================= */
 
  @keyframes mainInHold {
     0% {
@@ -292,7 +376,7 @@
     to {
         transform: translate(-50%, -70%) scale(0.90);
     }
-}
+}  */
 
 
 
@@ -464,6 +548,10 @@
         right: 15%;
         transform: translate(50%, -50%);
     }
+
+         .carousel{
+        margin-bottom: 80px !important;
+    }
 }
 
 @media (max-width: 640px) {
@@ -540,5 +628,19 @@
         font-size: 19.74px;
         line-height: 28.11px;
 
+    }
+
+        .swiper-wrapper {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+    .swiper-slide-active, .swiper-slide-prev,
+    .swiper-slide-next {
+        width: 100%;
+        min-height: 500px !important;
+        max-height: 610px !important;
+        height: 100% ;
+        margin-bottom: 80px !important;
     }
 }
