@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       models: {
         title: ['BI-ETL', 'GTM-процеси', "Growth-моделі", "PLG-продукти"],
-        spans: ['у digital-проєктах','у digital-проєктах','у digital-проєктах','у digital-макетингу'],
+        spans: ['у digital-проєктах','у digital-проєктах','у digital-проєктах','у digital-проєктах'],
         descr: ['BI-ETL— масштабований інструмент для посилення аналітики в маркетингових проєктах. Ми вибудовуємо архітектуру даних під завдання digital-проєктів: автоматизуємо збір, обробку та інтеграцію інформації для масштабованих воронок і стійкого зростання.', "GTM-процеси — це структурований підхід до виведення продуктів і рішень на ринок. У спільноті вибудувані стратегії запуску, позиціювання, сегментація та воронки. Акцент на узгодженості команд, BI-аналітиці та масштабуванні забезпечує передбачуване зростання й контроль над результатами.", "Growth-моделі — ефективний інструмент для побудови стійкого розвитку проєктів. У спільноті розробляються та впроваджуються моделі, які допомагають оптимізувати процеси залучення й утримання клієнтів, підвищуючи конверсію та масштабованість проєктних рішень.", "PLG-продукти — стратегічний формат зростання, заснований на цінності продукту. У спільноті формується та впроваджується система практик, що забезпечує органічне зростання, високу залученість і довгострокове утримання користувачів через продуктовий досвід."]
       },
       services: {
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     models: {
         title: ['BI-ETL', 'GTM processes', "Growth models", "PLG-products"],
-        spans: ['in digital projects','in digital projects','in digital projects','in digital marketing'],
+        spans: ['in digital projects','in digital projects','in digital projects','in digital projects'],
         descr: ['BI-ETL is a scalable tool for strengthening analytics in marketing projects. We build a data architecture for digital projects: we automate the collection, processing, and integration of information for scalable funnels and sustainable growth.', "GTM processes are a structured approach to bringing products and solutions to market. The community has built launch strategies, positioning, segmentation, and funnels. The emphasis on team alignment, BI analytics, and scaling ensures predictable growth and control over results.", "Growth models are an effective tool for building sustainable project development. The community develops and implements models that help optimize customer acquisition and retention processes, increasing the conversion and scalability of project solutions.", "PLG products are a strategic growth format based on product value. The community develops and implements a system of practices that ensures organic growth, high engagement, and long-term user retention through product experience."]
     },
     services: {
