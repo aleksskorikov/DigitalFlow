@@ -283,18 +283,9 @@
     will-change: transform, opacity;
 }
 
-.carousel__item--main::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    background: url(../images/slide-activ.png) no-repeat center / cover;
-    opacity: 1;
-    transition: opacity 0.6s ease;
-    transition-delay: 0.6s;
-    z-index: -1;
-    pointer-events: none;
-}
+
+
+
 
 /* .carousel__item--top {
     background: url(../images/Gradient.png) no-repeat center / cover;
@@ -333,8 +324,22 @@
 .carousel__item--main {
     transform: translate3d(-50%, -50%, 0) scale(1);
     opacity: 1;
+    background: url(../images/slide-activ.png) no-repeat center / cover;
     z-index: 5;
 }
+
+/* .carousel__item--main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: url(../images/slide-activ.png) no-repeat center / cover;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    transition-delay: 0.6s;
+    z-index: -1;
+    pointer-events: none;
+} */
 
 .carousel__item--exit {
     z-index: 4;
