@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function syncSelects() {
     selects.forEach(select => {
-      select.value = index % 3;
+      select.value = index % 5;
     });
   }
 

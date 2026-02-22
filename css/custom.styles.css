@@ -460,6 +460,11 @@
     height: 980px !important;
 }
 
+.careers__btns {
+    position: relative;
+    z-index: 1000;
+}
+
 @media (max-width: 1200px) {
     .section-title {
         font-size: 50px;
@@ -748,6 +753,11 @@
         height: 60px;
         background: url('../images/Ellipse-3.svg') no-repeat center / contain;
         z-index: 100;
+    }
+
+    .careers__btns{
+        position: relative;
+        z-index: 1000;
     }
 }
 

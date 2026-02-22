@@ -57,19 +57,14 @@ const careersTexts = {
         text: "Покрокові матеріали з освоєння інструментів та компетенцій для ефективної роботи в digital."
       },
       {
-        title: "Backstage Pass",
-        subtitle: "Колекція профільних зустрічей",
-        text: "Прямі ефіри та виступи запрошених експертів із аналізом трендів та відповідями на питання учасників."
+        title: "Growth Room",
+        subtitle: "Доступ до живих розборів",
+        text: "Інструменти для пошуку стратегій, обміну досвідом та роботи в сильному оточенні для стабільного зростання."
       },
       {
-        title: "Blueprint Lab",
-        subtitle: "Каталог реалізованих проєктів",
-        text: "Розгляд стратегій, реальних інструментів і готових моделей, які можна адаптувати та впровадити у свою практику."
-      },
-          {
-        title: "Toolbox Skills",
-        subtitle: "Бібліотека практичних курсів",
-        text: "Покрокові матеріали з освоєння інструментів та компетенцій для ефективної роботи в digital."
+        title: "Workflow Hub",
+        subtitle: "Бібліотека готових автоматизацій",
+        text: "РМакети для автоматизації рутини, систематизації процесів та підвищення загальної ефективності роботи."
       },
       {
         title: "Backstage Pass",
@@ -98,8 +93,18 @@ const careersTexts = {
     sliders: [
       {
         title: "Toolbox Skills",
-        subtitle: "Practical courses library",
-        text: "Step-by-step materials to master the tools and skills necessary for professional work in digital."
+        subtitle: "Library of practical courses",
+        text: "Step-by-step materials for mastering the tools and skills necessary for professional work in digital."
+      },
+      {
+        title: "Growth Room",
+        subtitle: "Access to live reviews",
+        text: "Tools for finding strategies, sharing experiences, and working in a strong environment for stable growth."
+      },
+      {
+        title: "Workflow Hub",
+        subtitle: "Library of ready-made automations",
+        text: "Templates for automating routines, systematising processes, and improving overall work efficiency."
       },
       {
         title: "Backstage Pass",
@@ -108,25 +113,9 @@ const careersTexts = {
       },
       {
         title: "Blueprint Lab",
-        subtitle: "Catalog of implemented projects",
-        text: "Analysis of strategies, real tools, and ready-made models that can be adapted and implemented in your practice."
-      },
-          {
-        title: "Toolbox Skills",
-        subtitle: "Practical courses library",
-        text: "Step-by-step materials to master the tools and skills necessary for professional work in digital."
-      },
-      {
-        title: "Backstage Pass",
-        subtitle: "Collection of profile meetings",
-        text: "Live sessions and presentations of invited experts with trend analysis and participant Q&A."
-      },
-      {
-        title: "Blueprint Lab",
-        subtitle: "Catalog of implemented projects",
-        text: "Analysis of strategies, real tools, and ready-made models that can be adapted and implemented in your practice."
+        subtitle: "Catalogue of completed projects",
+        text: "Review of strategies, practical tools and ready-made models that can be adapted and implemented in your practice."
       }
-
     ]
   }
 };
