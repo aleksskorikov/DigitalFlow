@@ -242,52 +242,6 @@
 }
 
 
-/* .carousel__item {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    opacity: 0;
-}
-
-.carousel__item-inner {
-    width: 550px;
-    height: 310px;
-    border-radius: 24px;
-    transition: transform 1.5s cubic-bezier(.22, .61, .36, 1), opacity .4s;
-}
-
-.carousel__item--main .carousel__item-inner {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-}
-
-.carousel__item--top {
-    background: url(../images/Gradient.png) no-repeat center / cover;
-    width: 500px !important;
-    transform: translate3d(-50%, -70%, 0) ;
-    opacity: 1;
-    z-index: 3;
-}
-
-.carousel__item--bottom {
-    background: url(../images/Gradient.png) no-repeat center / cover;
-    width: 500px;
-    transform: translate3d(-50%, -30%, 0) ;
-    opacity: 1;
-    z-index: 3;
-}
-
-.carousel__item--main {
-    width: 550px !important;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    background: url(../images/slide-activ.png) no-repeat center / cover;
-    z-index: 5;
-} */
-
-
 .carousel__item {
     position: absolute;
     left: 50%;
@@ -464,6 +418,10 @@
     position: relative;
     z-index: 1000;
 }
+
+ #formatBlockSecond {
+     padding-top: 30px !important;
+ }
 
 @media (max-width: 1200px) {
     .section-title {
@@ -688,7 +646,7 @@
     }
 
     .section__packages {
-        margin-top: -120px;
+        margin-top: 20px;
     }
 
     .block-btn {
@@ -729,7 +687,32 @@
     .slider-img-block {
         width: 100%;
     }
-            
+
+    .t396__artboard {
+        overflow: visible !important;
+    }
+
+    #formatBlockSecond{
+        padding-top: 30px !important;
+    }
+
+    #formatBlockThird{
+        padding-top: 50px !important;
+    }
+        #rec403116442 .tn-elem[data-elem-id='1642680374604'] .tn-atom {
+        padding-top: 120px !important;
+    }
+    #rec403116442 .tn-elem[data-elem-id='1642672804336'] {
+        height: 1105px !important;
+    }
+
+    .tn-elem__4031164421643121921896 {
+        top: 930px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 400px !important;
+        height: 115px !important;
+    }
 }
 
 @media (max-width: 482px){
@@ -758,6 +741,35 @@
     .careers__btns{
         position: relative;
         z-index: 1000;
+    }
+
+    #formatBlockSecond {
+        padding-top: 50px !important;
+    }
+
+    #formatBlockThird {
+        padding-top: 70px !important;
+    }
+
+    #rec403116442 .tn-elem[data-elem-id='1642680374604'] .tn-atom {
+        padding-top: 95px !important;
+    }
+
+    #rec403116442 .tn-elem[data-elem-id='1642672804336'] {
+        height: 1170px !important;
+    }
+        
+    .tn-elem__4031164421643121921896{
+        top: 1000px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 300px !important;
+        height: 115px !important;
+    }
+
+    
+    .section__packages {
+        margin-top: 90px;
     }
 }
 
