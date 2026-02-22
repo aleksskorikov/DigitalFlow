@@ -269,7 +269,7 @@
     border-radius: 24px;
 
     /* КЛЮЧОВЕ */
-    transform: translate3d(-50%, -50%, 0) scale(0.9);
+    transform: translate3d(-50%, -50%, 0);
     opacity: 0;
 
     transition:
@@ -322,7 +322,7 @@
 } */
 
 .carousel__item--main {
-    transform: translate3d(-50%, -50%, 0) scale(1);
+    transform: translate3d(-50%, -50%, 0);
     opacity: 1;
     background: url(../images/slide-activ.png) no-repeat center / cover;
     z-index: 5;
