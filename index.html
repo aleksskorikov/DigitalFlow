@@ -85,6 +85,15 @@
 			content="images/favicon1.ico"
 		>
 		<!-- Assets -->
+
+
+		<script>
+			if (!localStorage.getItem('language')) {
+				localStorage.setItem('language', 'UA');
+			}
+			window.browserLang = 'UA';
+			window.tildaBrowserLang = 'UA';
+		</script>
 		<script
 			src="js/tilda-fallback-1.0.min.js"
 			async=""
@@ -398,8 +407,8 @@
 						<li><a href="#" data-target="careers" class="header__link"></a></li>
 					</ul>
 					<div class="header__lang-switch">
-						<input type="radio" id="lang-en" name="language" value="EN" checked>
-						<input type="radio" id="lang-ua" name="language" value="UA" >
+						<input type="radio" id="lang-en" name="language" value="EN" >
+						<input type="radio" id="lang-ua" name="language" value="UA" checked>
 
 						<label for="lang-en">EN</label>
 						<label for="lang-ua">UA</label>

@@ -775,9 +775,15 @@
 
 window.addEventListener('load', () => {
 
-    if (localStorage.getItem('languageChanged') === 'true') return;
+    if (!localStorage.getItem('language')) {
+    localStorage.setItem('language', 'UA');
+}
 
-    if (localStorage.getItem('language') === 'EN') {
+let storedLang = localStorage.getItem('language');
+
+    // if (localStorage.getItem('languageChanged') === 'true') return;
+
+   if (storedLang === 'UA') {
 
         //hero
         const mainDesc = document.querySelector('[data-elem-id="1642632663322"]');
@@ -958,10 +964,10 @@ window.addEventListener('load', () => {
     const headerAdmin = document.querySelector('.header__admin');
     const menuLink = document.querySelectorAll('.header__link-mobile');
 
-    if (localStorage.getItem('languageChanged') === 'true') {
-        localStorage.removeItem('languageChanged');
-        return;
-    }
+    // if (localStorage.getItem('languageChanged') === 'true') {
+    //     localStorage.removeItem('languageChanged');
+    //     return;
+    // }
 
     const radios = document.querySelectorAll('input[name="language"]');
     const labels = document.querySelectorAll('.header__lang-switch label');
@@ -969,7 +975,7 @@ window.addEventListener('load', () => {
     const bgMobile = document.querySelector('.lang-bg-mobile');
     const buttons = document.querySelectorAll('.careers__btn');
 
-    let storedLang = localStorage.getItem('language') || 'EN';
+    // let storedLang = localStorage.getItem('language') || 'UA';
 
     function updateBackgrounds(language) {
         if (bg) bg.style.transform = language === 'EN' ? 'translate(0, -50%)' : 'translate(100%, -50%)';
@@ -987,22 +993,33 @@ window.addEventListener('load', () => {
     radios.forEach(r => {
         r.checked = r.value === storedLang;
     });
+
+
     updateBackgrounds(storedLang);
     updateLabelsColor();
 
+    // radios.forEach(r => {
+    //     r.addEventListener('change', () => {
+    //         if (r.checked) {
+    //             const language = r.value;
+    //             storedLang = language;
+    //             localStorage.setItem('language', language);
+    //             updateBackgrounds(language);
+    //             updateLabelsColor();
+    //             document.dispatchEvent(new CustomEvent('languageChanged', { detail: language.toLowerCase() }));
+    //             location.reload();
+    //         }
+    //     });
+    // });
+
     radios.forEach(r => {
-        r.addEventListener('change', () => {
-            if (r.checked) {
-                const language = r.value;
-                storedLang = language;
-                localStorage.setItem('language', language);
-                updateBackgrounds(language);
-                updateLabelsColor();
-                document.dispatchEvent(new CustomEvent('languageChanged', { detail: language.toLowerCase() }));
-                location.reload();
-            }
-        });
+    r.addEventListener('change', () => {
+        if (!r.checked) return;
+
+        localStorage.setItem('language', r.value);
+        location.reload();
     });
+});
 
     // --- Карьерные кнопки ---
     buttons.forEach((button, index) => {

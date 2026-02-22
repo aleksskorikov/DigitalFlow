@@ -463,7 +463,14 @@
     display: none;
 }
 
+#rec403116442 .tn-elem[data-elem-id='1642680374604'] .tn-atom {
+    padding-top: 35px !important;
+    padding-bottom: 25px !important;
+}
 
+#rec403116442 .tn-elem[data-elem-id='1642672804336']{
+    height: 980px !important;
+}
 
 @media (max-width: 1200px) {
     .section-title {
