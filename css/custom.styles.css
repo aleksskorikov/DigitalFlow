@@ -251,14 +251,13 @@
         opacity 0.4s ease;
     z-index: 1;
     backface-visibility: hidden;
-    transform-style: preserve-3d;
-    will-change: transform, opacity;
+    transform-style: flat;
 }
 
 .carousel__item--top {
     background: url(../images/Gradient.png) no-repeat center / cover;
     width: 500px !important;
-    transform: translate3d(-50%, -70%, 0);
+    transform: translate(-50%, -70%);
     opacity: 1;
     z-index: 3;
 }
@@ -266,7 +265,7 @@
 .carousel__item--bottom {
     background: url(../images/Gradient.png) no-repeat center / cover;
     width: 500px;
-    transform: translate3d(-50%, -30%, 0);
+    transform: translate(-50%, -30%);
     opacity: 1;
     z-index: 3;
 }
@@ -275,10 +274,11 @@
     width: 550px !important;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(0);
     opacity: 1;
     background: url(../images/slide-activ.png) no-repeat center / cover;
     z-index: 5;
+    will-change: transform;
 }
 
 .carousel__item--exit {
@@ -298,6 +298,8 @@
     }
 }
 
+
+
 .slider-block{
     display: flex;
     justify-content: space-between;
@@ -315,6 +317,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    contain: paint;
+    isolation: isolate;
 }
 
 .slider-img-block img {
@@ -322,6 +326,8 @@
     height: 100%;
     object-fit: contain;
     display: block;
+    backface-visibility: hidden;
+    background-color: transparent;
 }
 
 
@@ -794,4 +800,6 @@
 }
 
 
-
+.sssss{
+    margin-top: 150px;
+}
