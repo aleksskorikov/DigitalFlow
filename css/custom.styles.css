@@ -240,7 +240,133 @@
     margin-left: -25px;
 }
 
+/* ====== КАРТОЧКА (БАЗА) ====== */
 .carousel__item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 310px;
+    border-radius: 24px;
+
+    opacity: 0;
+    z-index: 1;
+
+    /* Анимации ТОЛЬКО тут */
+    transition:
+        transform 1.5s cubic-bezier(.22, .61, .36, 1),
+        opacity 0.4s ease;
+
+    /* GPU оптимизация */
+    backface-visibility: hidden;
+    transform-style: flat;
+    will-change: transform, opacity;
+}
+
+/* ====== ВЕРХНЯЯ КАРТОЧКА ====== */
+.carousel__item--top {
+    width: 500px !important;
+    background: url(../images/Gradient.png) no-repeat center / cover;
+
+    transform: translate3d(-50%, -70%, 0);
+    opacity: 1;
+    z-index: 3;
+}
+
+/* ====== НИЖНЯЯ КАРТОЧКА ====== */
+.carousel__item--bottom {
+    width: 500px;
+    background: url(../images/Gradient.png) no-repeat center / cover;
+
+    transform: translate3d(-50%, -30%, 0);
+    opacity: 1;
+    z-index: 3;
+}
+
+/* ====== АКТИВНАЯ КАРТОЧКА ====== */
+.carousel__item--main {
+    width: 550px !important;
+    background: url(../images/slide-activ.png) no-repeat center / cover;
+
+    /* ❗ КЛЮЧЕВО: transform ТОЛЬКО центрирование */
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    z-index: 5;
+
+    /* ❗ НИКАКИХ will-change здесь */
+    will-change: auto;
+}
+
+/* ====== УХОДЯЩАЯ КАРТОЧКА ====== */
+.carousel__item--exit {
+    z-index: 4;
+    animation: slideUpFade 1.3s forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-50%, -70%) scale(0.92);
+        opacity: 0;
+    }
+}
+
+/* ====== INNER (ТОЛЬКО СТРУКТУРА, БЕЗ АНИМАЦИИ) ====== */
+.carousel__item-inner {
+    width: 100%;
+    height: 100%;
+
+    /* ❗ НИКОГДА не анимируется */
+    transform: none;
+    will-change: auto;
+}
+
+/* ====== ВНУТРЕННОСТИ КАРТОЧКИ ====== */
+.slider-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 15px 32px 32px;
+    height: 100%;
+}
+
+/* ====== ТЕКСТ ====== */
+.slider-text-block {
+    width: 50%;
+}
+
+/* ====== ИЗОБРАЖЕНИЕ ====== */
+.slider-img-block {
+    width: 50%;
+    height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* ❗ КРИТИЧНО ДЛЯ РЕЗКОСТИ */
+.slider-img-block img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+
+    /* ❗ НЕ ускоряем GPU */
+    will-change: auto;
+    transform: none;
+    backface-visibility: hidden;
+
+    /* Доп. защита от Chrome-мыла */
+    image-rendering: auto;
+}
+
+/* .carousel__item {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -323,7 +449,7 @@
     height: 100%;
     object-fit: contain;
     display: block;
-}
+} */
 
 
 .slider-logo{
