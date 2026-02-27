@@ -677,7 +677,7 @@
         content: '';
         position: absolute;
         left: 20%;
-        top: -350%;
+        top: -310%;
         width: 28px;
         height: 28px;
         background: url('../images/Ellipse-5.svg') no-repeat center / contain;
@@ -688,7 +688,7 @@
         content: '';
         position: absolute;
         left: 5%;
-        top: -370%;
+        top: -330%;
         width: 60px;
         height: 60px;
         background: url('../images/Ellipse-3.svg') no-repeat center / contain;
@@ -753,7 +753,7 @@
         content: '';
         position: absolute;
         left: 18%;
-        top: -310%;
+        top: -280%;
         width: 28px;
         height: 28px;
         background: url('../images/Ellipse-5.svg') no-repeat center / contain;
@@ -764,7 +764,7 @@
         content: '';
         position: absolute;
         left: -2%;
-        top: -330%;
+        top: -300%;
         width: 60px;
         height: 60px;
         background: url('../images/Ellipse-3.svg') no-repeat center / contain;
