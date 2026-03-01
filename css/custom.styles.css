@@ -1,4 +1,15 @@
 
+.header__wrapper-logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text{
+    width: 129px;
+    height: 40px;
+    margin-top: 6px;
+}
 
 .section__packages{
     background-image:
@@ -120,7 +131,7 @@
     content: '';
     position: absolute;
     left: 40%;
-    bottom: 0;
+    bottom: -7%;
     width: 740px;
     height: 350px;
     background: url('../images/Frame\ 17.png') no-repeat center / contain;
