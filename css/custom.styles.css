@@ -470,6 +470,10 @@
      padding-top: 30px !important;
  }
 
+.services__title-text{
+    width: 220px !important;
+} 
+
 @media (max-width: 1200px) {
     .section-title {
         font-size: 50px;
